@@ -1,0 +1,43 @@
+<div class="component__inner tiles__inner">
+
+  {{> component this}}
+
+  <div class="component__widget tiles__widget">
+
+    <div class="tiles__grid u-clearfix">
+
+      {{#each _items}}
+      <div class="tiles-item{{#if title}} title-enabled{{/if}}" data-index="{{_index}}">
+        <button class="tiles-item__btn js-tiles-item{{#if _isVisited}} is-visited{{/if}}">
+
+          <span class="aria-label">
+            {{#if title}}{{{compile_a11y_normalize title}}}{{else}}{{../_globals._accessibility._ariaLabels.item}} {{numbers @index}}{{/if}}.{{#if _graphic.alt}} {{_graphic.alt}}.{{/if}}
+          </span>
+          <div class="tiles-item__container">
+            <div class="tiles-item__image" style="background: url('{{_graphic._src}}');"></div>
+
+            <div class="tiles-item__body"{{#if _backgroundColor}} style="background-color:{{_backgroundColor}};"{{/if}} aria-hidden="true">
+              <div class="tiles-item__body-inner">
+                {{{compile body}}}
+              </div>
+            </div>
+
+            {{#if title}}
+            <div class="tiles-item__title"{{#if _backgroundColor}} style="background-color:{{_backgroundColor}};"{{/if}} aria-hidden="true">
+              <div class="tiles-item__title-inner">
+                {{{compile title}}}
+              </div>
+            </div>
+            {{/if}}
+
+          </div>
+          
+        </button>
+      </div>
+      {{/each}}
+
+    </div>
+
+  </div>
+
+</div>

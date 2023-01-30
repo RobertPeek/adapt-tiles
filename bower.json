@@ -1,0 +1,15 @@
+{
+  "name": "adapt-tiles",
+  "version": "1.0.0",
+  "framework": ">=5.20.1",
+  "homepage": "https://github.com/RobertPeek/adapt-tiles",
+  "displayName": "Tiles",
+  "component": "tiles",
+  "description": "A component that displays selectable, tiled images.",
+  "main": "/js/adapt-tiles.js",
+  "keywords": [
+    "adapt-plugin",
+    "adapt-component"
+  ],
+  "license": "GPL-3.0"
+}

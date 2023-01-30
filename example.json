@@ -1,0 +1,52 @@
+    {
+        "_id": "c-05",
+        "_parentId": "b-05",
+        "_type": "component",
+        "_component": "tiles",
+        "_classes": "",
+        "_layout": "full",
+        "title": "Tiles",
+        "displayTitle": "Tiles",
+        "body": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis.",
+        "instruction": "",
+        "_columns": 2,
+        "_mobileColumns": 1,
+        "_itemHeight": 200,
+        "_itemMobileHeight": 300,
+        "_shouldDisplayAllItems": false,
+        "_items": [
+            {
+                "title": "Tiles Item 1",
+                "body": "This is display text 1. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.",
+                "_backgroundColor": "",
+                "_graphic": {
+                  "_src": "course/en/images/c-05-1.png",
+                  "alt": "alt text here test"
+                }
+            },
+            {
+                "title": "Tiles Item 2",
+                "body": "This is display text 2. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.",
+                "_backgroundColor": "",
+                "_graphic": {
+                  "_src": "course/en/images/c-05-2.png",
+                  "alt": ""
+                }
+            },
+            {
+                "title": "Tiles Item 3",
+                "body": "This is display text 3. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.",
+                "_backgroundColor": "",
+                "_graphic": {
+                  "_src": "course/en/images/c-05-3.png",
+                  "alt": ""
+                }
+            }
+        ]
+    }
+
+// Accessibility supported courses require ARIA instruction - apply to _globals in course.json
+
+"_tiles": {
+    "ariaRegion": "Selectable image component. Select each item to show more information."
+}

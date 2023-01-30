@@ -1,0 +1,159 @@
+{
+  "type": "object",
+  "$schema": "http://json-schema.org/draft-04/schema",
+  "id": "http://jsonschema.net",
+  "$ref": "http://localhost/plugins/content/component/model.schema",
+  "globals": {
+    "ariaRegion": {
+      "type": "string",
+      "required": true,
+      "default": "Selectable image component. Select each item to show more information.",
+      "inputType": "Text",
+      "validators": [],
+      "translatable": true
+    }
+  },
+  "properties": {
+    "_supportedLayout": {
+      "type": "string",
+      "required": true,
+      "enum": ["full-width", "half-width", "both"],
+      "default": "full-width",
+      "editorOnly": true
+    },
+    "instruction": {
+      "type": "string",
+      "required": false,
+      "default": "",
+      "inputType": "Text",
+      "validators": [],
+      "translatable": true
+    },
+    "_columns": {
+      "type": "number",
+      "required": true,
+      "title": "Columns",
+      "inputType": "Number",
+      "default": 2,
+      "validators": ["number"],
+      "help": "This value determines the number of tiles in a row. Any number of columns can be set however keep in mind the more columns there are the smaller the tiles will be."
+    },
+    "_mobileColumns": {
+      "type": "number",
+      "required": true,
+      "title": "Columns (medium and small devices)",
+      "inputType": "Number",
+      "default": 1,
+      "validators": ["number"],
+      "help": "This value determines the number of tiles in a row. Any number of columns can be set however keep in mind the more columns there are the smaller the tiles will be."
+    },
+    "_itemHeight": {
+      "type": "number",
+      "required": true,
+      "title": "Item Height",
+      "inputType": "Number",
+      "default": 200,
+      "validators": ["number"],
+      "help": "This value determines the minimum height for each item when viewed on large size screens."
+    },
+    "_itemMobileHeight": {
+      "type": "number",
+      "required": true,
+      "title": "Item Height (medium and small devices)",
+      "inputType": "Number",
+      "default": 300,
+      "validators": ["number"],
+      "help": "This value determines the minimum height for each item when viewed on medium and small size screens."
+    },
+    "_shouldDisplayAllItems": {
+      "type": "boolean",
+      "required": false,
+      "default": false,
+      "title": "Display All Items",
+      "inputType": "Checkbox",
+      "validators": [],
+      "help": "This will make each item stay visible after it has been selected."
+    },
+    "_items": {
+      "type": "array",
+      "required": true,
+      "title": "Items",
+      "items": {
+        "type": "object",
+        "required": true,
+        "properties": {
+          "title": {
+            "type": "string",
+            "required": false,
+            "default": "",
+            "title": "Title",
+            "inputType": "TextArea",
+            "validators": [],
+            "help": "This is optional title text for the tile.",
+            "translatable": true
+          },
+          "body": {
+            "type": "string",
+            "required": false,
+            "default": "",
+            "title": "Body",
+            "inputType": "TextArea",
+            "validators": [],
+            "help": "This is the body text for the tile.",
+            "translatable": true
+          },
+          "_backgroundColor": {
+            "type": "string",
+            "required": false,
+            "default": "",
+            "title": "Background Colour",
+            "inputType": "ColourPicker",
+            "validators": []
+          },
+          "_graphic": {
+            "type": "object",
+            "required": true,
+            "title": "Graphic",
+            "properties":{
+              "_src": {
+                "type": "string",
+                "required": true,
+                "default": "",
+                "title": "Graphic asset",
+                "inputType": "Asset:image",
+                "validators": ["required"]
+              },
+              "alt": {
+                "type": "string",
+                "required": false,
+                "default": "",
+                "title": "Graphic alt text",
+                "inputType": "Text",
+                "validators": [],
+                "help": "Alternative text for the tile.",
+                "translatable": true
+              }
+            }
+          },
+          "_audio": {
+            "type": "object",
+            "required": false,
+            "properties": {
+              "_src": {
+                "type": "string",
+                "required": false,
+                "default": "",
+                "title": "Audio",
+                "inputType": "Asset:audio",
+                "validators": [],
+                "audioSources": ["_items/#/body"],
+                "audioConditions": [],
+                "help": "Optional audio for this tile."
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
